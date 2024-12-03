@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор и План Питания</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>Калькулятор и План Питания</h1>
+</header>
+
+<div class="container">
+    <h2 class="tab-header" onclick="toggleTab('calculatorTab')">Калькулятор калорий</h2>
+    <div id="calculatorTab" class="tab hidden">
+        <form>
+            <div class="form-group">
+                <label for="gender">Ваш пол</label>
+                <select id="gender">
+                    <option value="male">Мужской</option>
+                    <option value="female">Женский</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="age">Возраст (в годах)</label>
+                <input type="number" id="age" placeholder="Введите ваш возраст">
+            </div>
+            <div class="form-group">
+                <label for="height">Рост (см)</label>
+                <input type="number" id="height" placeholder="Введите ваш рост">
+            </div>
+            <div class="form-group">
+                <label for="weight">Текущий вес (кг)</label>
+                <input type="number" id="weight" placeholder="Введите ваш текущий вес">
+            </div>
+            <div class="form-group">
+                <label for="goalWeight">Целевой вес (кг)</label>
+                <input type="number" id="goalWeight" placeholder="Введите ваш целевой вес">
+            </div>
+            <div class="form-group">
+                <label for="activity">Уровень активности</label>
+                <select id="activity">
+                    <option value="1.2">Минимум (сидячий образ жизни)</option>
+                    <option value="1.375">Легкая активность</option>
+                    <option value="1.55">Средняя</option>
+                    <option value="1.725">Высокая</option>
+                    <option value="1.9">Очень высокая</option>
+                </select>
+            </div>
+            <button type="button" id="calculateButton">Рассчитать</button>
+        </form>
+        <div id="result" class="result">Результаты появятся здесь</div>
+    </div>
+
+    <h2 class="tab-header" onclick="toggleTab('mealPlanTab')">Генерация Плана Питания</h2>
+    <div id="mealPlanTab" class="tab hidden">
+        <form>
+            <div class="form-group">
+                <label for="caloriesInput">Введите желаемое количество калорий:</label>
+                <input type="number" id="caloriesInput" placeholder="Например, 2000">
+            </div>
+            <button type="button" id="generateMealPlanButton">Создать План Питания</button>
+        </form>
+        <div id="mealPlanResult" class="result">Ваш план питания появится здесь</div>
+    </div>
+
+    <div>
+        <button onclick="location.href='recipes.html'" class="navigation-button">Перейти к рецептам</button>
+    </div>
+    <div>
+        <img id="loadingGif" src="C:\Users\Никита\Desktop\vesogonka\kroll.gif" alt="Loading" />
+    </div>
+</div>
+
+<footer class="footer">
+    <p>Связаться с поддержкой: <a href="https://t.me/qqtomii" target="_blank">Telegram</a></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
